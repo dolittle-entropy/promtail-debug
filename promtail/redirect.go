@@ -11,6 +11,7 @@ func RedirectStdinToPromtail() {
 	cmd := exec.Command("/usr/bin/promtail", "--stdin", "--config.file=/config.yaml", "--client.url", "http://127.0.0.1:3100/loki/api/v1/push")
 
 	cmd.Stdout = os.Stderr
+	cmd.Stderr = os.Stderr
 
 	stdin, err := cmd.StdinPipe()
 	if err != nil {
