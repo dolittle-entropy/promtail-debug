@@ -1,0 +1,8 @@
+server:
+    http_listen_port: 9007
+
+scrape_configs:
+  - job_name: "debugging"
+    static_configs:
+    - labels:
+        job: "debugging"
